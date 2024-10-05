@@ -330,3 +330,15 @@ form .button:hover {
 .user-card p {
     color: #555;
 }
+
+/* Add these styles to your existing CSS */
+
+input[type="file"] {
+    margin: 15px 0;
+}
+
+.profile-container label {
+    display: block;
+    margin: 10px 0;
+    color: #555;
+}
