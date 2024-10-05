@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useAuth } from './AuthContext';
 
 const Profile = () => {
+    const { user, logout } = useAuth(); // Get user data and logout function from context
     const [profilePicture, setProfilePicture] = useState(null);
     const [privacy, setPrivacy] = useState('public'); // Default privacy setting
 
@@ -18,6 +20,7 @@ const Profile = () => {
     return (
         <div className="profile-container">
             <h1>Your Profile</h1>
+            <p>Logged in as: {user.username}</p> {/* Display the username */}
             <div className="profile-picture">
                 {profilePicture ? (
                     <img src={profilePicture} alt="Profile" width="150" height="150" />
@@ -47,6 +50,7 @@ const Profile = () => {
                     Private
                 </label>
             </div>
+            <button onClick={logout} className="button">Logout</button> {/* Logout button */}
         </div>
     );
 };
