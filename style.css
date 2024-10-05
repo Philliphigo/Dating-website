@@ -1,105 +1,143 @@
-/* General styling */
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, h2 {
+    font-weight: normal;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #007BFF;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* Form Container */
+.form-container {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.form-container input[type="email"],
+.form-container input[type="password"],
+.form-container input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-container .button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-container .button:hover {
+    background-color: #0056b3;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #333;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
     margin: 0;
     padding: 0;
     text-align: center;
 }
 
-header {
-    background-color: #e91e63;
-    color: white;
-    padding: 30px 0;
-}
-
-h1 {
-    margin: 0;
-    font-size: 2.5rem;
-}
-
-p {
-    font-size: 1.2rem;
-    margin-top: 10px;
-}
-
-/* Buttons */
-.action-buttons {
-    margin: 50px 0;
-}
-
-.button {
+nav ul li {
     display: inline-block;
-    padding: 10px 20px;
-    margin: 10px;
-    background-color: #e91e63;
+    margin-right: 15px;
+}
+
+nav ul li a {
     color: white;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 1.1rem;
-    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
-.button:hover {
-    background-color: #d81b60;
+nav ul li a:hover {
+    text-decoration: underline;
 }
 
-/* Form Styling */
-.form-container {
-    max-width: 400px;
-    margin: 100px auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-label {
-    display: block;
-    margin: 10px 0 5px;
-    color: #555;
-}
-
-input[type="email"], input[type="password"], input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-button {
-    padding: 10px 20px;
-    background-color: #e91e63;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #d81b60;
-}
-
-/* Watermark Styling */
+/* Watermark */
 .watermark {
     position: fixed;
     bottom: 10px;
     right: 10px;
-    font-size: 0.8rem;
-    color: rgba(128, 128, 128, 0.5);
-    z-index: 100;
-    font-style: italic;
+    font-size: 12px;
+    color: lightgray;
 }
 
 .watermark a {
-    text-decoration: none;
-    color: inherit;
+    color: lightgray;
 }
 
 .watermark a:hover {
-    color: rgba(128, 128, 128, 0.7);
+    color: gray;
+}
+
+/* Home Container */
+.home-container {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.home-container h1 {
+    font-size: 48px;
+    color: #333;
+}
+
+.home-container p {
+    font-size: 18px;
+    color: #666;
+    margin: 20px 0;
+}
+
+.home-container .button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.home-container .button:hover {
+    background-color: #0056b3;
 }
