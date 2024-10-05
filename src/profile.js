@@ -18,18 +18,14 @@ const Profile = () => {
     return (
         <div className="profile-container">
             <h1>Your Profile</h1>
-
-            {/* Profile Picture Upload */}
             <div className="profile-picture">
                 {profilePicture ? (
-                    <img src={profilePicture} alt="Profile" style={{ width: '150px', height: '150px', borderRadius: '50%' }} />
+                    <img src={profilePicture} alt="Profile" width="150" height="150" />
                 ) : (
-                    <p>No profile picture uploaded.</p>
+                    <p>No profile picture uploaded</p>
                 )}
                 <input type="file" accept="image/*" onChange={handlePictureChange} />
             </div>
-
-            {/* Privacy Settings */}
             <div className="privacy-settings">
                 <h2>Privacy Settings</h2>
                 <label>
@@ -50,7 +46,6 @@ const Profile = () => {
                     />
                     Private
                 </label>
-                <p>Current setting: {privacy}</p>
             </div>
         </div>
     );
