@@ -184,11 +184,36 @@ nav ul li a:hover {
     margin-bottom: 20px;
 }
 
+.message-list {
+    max-height: 300px; /* Limit the height for scrolling */
+    overflow-y: auto; /* Allow scrolling */
+    margin-bottom: 20px;
+}
+
+.no-messages {
+    text-align: center;
+    color: #666;
+    margin: 20px 0;
+    font-style: italic;
+}
+
 .message {
+    padding: 10px;
     border-bottom: 1px solid #ddd;
-    padding: 10px 0;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.message:hover {
+    background-color: #f0f0f0; /* Highlight on hover */
+}
+
+.message strong {
+    display: block; /* Stack name and message */
+    color: #007BFF; /* Name color */
+    margin-bottom: 5px;
 }
 
 .message p {
-    margin: 5px 0;
+    margin: 0; /* Remove margin from message */
 }
