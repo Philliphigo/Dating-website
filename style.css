@@ -175,7 +175,7 @@ nav ul li a:hover {
     padding: 20px;
     background-color: #fff;
     border: 1px solid #ddd;
-    border-radius: 10px; /* Rounded corners */
+    border-radius: 10px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -185,69 +185,50 @@ nav ul li a:hover {
     color: #333;
 }
 
-.message-list {
-    max-height: 400px; /* Increased height for more messages */
-    overflow-y: auto; /* Allow scrolling */
-    margin-bottom: 20px;
+.chat-list {
+    border-bottom: 1px solid #ddd;
 }
 
-.no-messages {
-    text-align: center;
-    color: #666;
-    margin: 20px 0;
-    font-style: italic;
-}
-
-.message {
+.chat-item {
     padding: 10px;
-    border-bottom: 1px solid #f0f0f0; /* Light border */
+    border-bottom: 1px solid #ddd;
     cursor: pointer;
-    transition: background-color 0.2s;
 }
 
-.message:hover {
-    background-color: #f9f9f9; /* Slightly darker on hover */
+.chat-item:hover {
+    background-color: #f1f1f1;
 }
 
-.message-header {
-    display: flex;
-    justify-content: flex-start; /* Align to the left */
-}
-
-.message-header strong {
-    color: #007BFF; /* Name color */
-}
-
-/* Chat Window */
-.chat-window {
-    background-color: #f9f9f9;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+.chat-box {
     margin-top: 20px;
 }
 
-.chat-messages {
+.chat-box h2 {
+    margin-bottom: 10px;
+}
+
+.messages {
     max-height: 200px;
-    overflow-y: auto; /* Allow scrolling for chat messages */
+    overflow-y: auto;
+    border: 1px solid #ddd;
     margin-bottom: 10px;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-form textarea {
-    width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.message {
+    margin-bottom: 5px;
+}
+
+input[type="text"] {
+    width: calc(100% - 100px);
+    padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
 }
 
-form .button {
-    width: 100%;
+button {
     padding: 10px;
     background-color: #007BFF;
     color: white;
@@ -256,6 +237,11 @@ form .button {
     cursor: pointer;
 }
 
-form .button:hover {
+button:hover {
     background-color: #0056b3;
+}
+
+.no-messages {
+    text-align: center;
+    margin-top: 20px;
 }
