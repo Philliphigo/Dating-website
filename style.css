@@ -175,17 +175,18 @@ nav ul li a:hover {
     padding: 20px;
     background-color: #fff;
     border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
 }
 
 .messages-container h1 {
     text-align: center;
     margin-bottom: 20px;
+    color: #333;
 }
 
 .message-list {
-    max-height: 300px; /* Limit the height for scrolling */
+    max-height: 400px; /* Increased height for more messages */
     overflow-y: auto; /* Allow scrolling */
     margin-bottom: 20px;
 }
@@ -199,21 +200,68 @@ nav ul li a:hover {
 
 .message {
     padding: 10px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #f0f0f0; /* Light border */
     cursor: pointer;
     transition: background-color 0.2s;
 }
 
 .message:hover {
-    background-color: #f0f0f0; /* Highlight on hover */
+    background-color: #f9f9f9; /* Slightly darker on hover */
 }
 
-.message strong {
-    display: block; /* Stack name and message */
-    color: #007BFF; /* Name color */
+.message-header {
+    display: flex;
+    justify-content: space-between; /* Space out name and time */
     margin-bottom: 5px;
 }
 
-.message p {
-    margin: 0; /* Remove margin from message */
+.message-header strong {
+    color: #007BFF; /* Name color */
+}
+
+.message-time {
+    color: #999; /* Time color */
+    font-size: 12px; /* Smaller font for time */
+}
+
+.message-preview {
+    color: #333; /* Preview message color */
+    margin: 0; /* Remove margin from preview */
+}
+
+/* Send Message Form */
+form {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+form input[type="text"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form .button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form .button:hover {
+    background-color: #0056b3;
 }
