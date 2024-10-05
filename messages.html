@@ -24,48 +24,54 @@
         
         <div class="message-list">
             <!-- Placeholder for when there are no messages -->
-            <div class="no-messages">
+            <div class="no-messages" id="noMessages">
                 <p>No messages yet. Start a conversation!</p>
             </div>
             <!-- Sample messages for demonstration -->
-            <div class="message">
+            <div class="message" id="chat1" onclick="openChat('Chat 1', 'Hi there! How are you?')">
                 <div class="message-header">
                     <strong>Jane Doe</strong>
-                    <span class="message-time">10:30 AM</span>
                 </div>
                 <p class="message-preview">Hi there! How are you?</p>
             </div>
-            <div class="message">
+            <div class="message" id="chat2" onclick="openChat('Chat 2', 'Looking forward to our hike this weekend!')">
                 <div class="message-header">
                     <strong>John Smith</strong>
-                    <span class="message-time">9:15 AM</span>
                 </div>
                 <p class="message-preview">Looking forward to our hike this weekend!</p>
             </div>
-            <div class="message">
-                <div class="message-header">
-                    <strong>Mary Jane</strong>
-                    <span class="message-time">Yesterday</span>
-                </div>
-                <p class="message-preview">Are you free for coffee tomorrow?</p>
-            </div>
         </div>
 
-        <h2>Send a Message</h2>
-        <form action="#" method="POST">
-            <label for="recipient">To:</label>
-            <input type="text" id="recipient" name="recipient" required>
-
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-
-            <button type="submit" class="button">Send</button>
-        </form>
+        <div class="chat-window" id="chatWindow" style="display:none;">
+            <h2 id="chatUser">Chat with: </h2>
+            <div class="chat-messages" id="chatMessages"></div>
+            <form id="sendMessageForm" onsubmit="sendMessage(event)">
+                <textarea id="messageInput" rows="4" placeholder="Type your message here..." required></textarea>
+                <button type="submit" class="button">Send</button>
+            </form>
+        </div>
     </div>
 
     <div class="watermark">
         <a href="#">by Phil</a>
     </div>
+
+    <script>
+        function openChat(user, lastMessage) {
+            document.getElementById('chatUser').innerText = "Chat with: " + user;
+            document.getElementById('chatMessages').innerHTML = "<p><strong>" + user + ":</strong> " + lastMessage + "</p>";
+            document.getElementById('noMessages').style.display = "none";
+            document.getElementById('chatWindow').style.display = "block";
+        }
+
+        function sendMessage(event) {
+            event.preventDefault();
+            const message = document.getElementById('messageInput').value;
+            const chatMessages = document.getElementById('chatMessages');
+            chatMessages.innerHTML += "<p><strong>You:</strong> " + message + "</p>";
+            document.getElementById('sendMessageForm').reset();
+        }
+    </script>
 
 </body>
 </html>
