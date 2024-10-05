@@ -408,3 +408,65 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.profile-container {
+    max-width: 600px; /* Limit the width on larger screens */
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Add padding */
+}
+
+h1, h2 {
+    font-size: 1.5em; /* Make headings larger */
+}
+
+img {
+    max-width: 100%; /* Ensure images are responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+input[type="text"], input[type="file"] {
+    width: 100%; /* Full width on mobile */
+    padding: 10px; /* Add padding */
+    margin-bottom: 10px; /* Space between inputs */
+    border: 1px solid #ccc; /* Border styling */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Radio button styling */
+label {
+    display: block; /* Stack radio buttons vertically */
+    margin-bottom: 10px; /* Space between radio buttons */
+}
+
+/* Button styling */
+button {
+    background-color: #007bff; /* Primary button color */
+    color: white; /* Button text color */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Button padding */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Change cursor on hover */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5em; /* Smaller heading for mobile */
+    }
+
+    h2 {
+        font-size: 1.2em; /* Smaller subheading for mobile */
+    }
+}
