@@ -1,33 +1,25 @@
-// src/Login.js
 import React, { useState } from 'react';
+import { useAuth } from './AuthContext';
 
 const Login = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [username, setUsername] = useState('');
+    const { login } = useAuth();
 
-    const handleLogin = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        // Handle login logic here
-        console.log('Logging in with', email, password);
+        login(username);
     };
 
     return (
         <div className="form-container">
             <h2>Login</h2>
-            <form onSubmit={handleLogin}>
-                <label>Email</label>
-                <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                />
-                <label>Password</label>
-                <input
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
+            <form onSubmit={handleSubmit}>
+                <label>Username</label>
+                <input 
+                    type="text" 
+                    value={username} 
+                    onChange={(e) => setUsername(e.target.value)} 
+                    required 
                 />
                 <button type="submit" className="button">Login</button>
             </form>
