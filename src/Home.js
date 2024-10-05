@@ -8,6 +8,8 @@ const Home = () => {
             <h1>Welcome to the Dating App</h1>
             <p>Connect with people around you!</p>
             <Link to="/login" className="button">Log In</Link>
+            {/* Link to Notifications */}
+            <Link to="/notifications" className="button">View Notifications</Link>
             {/* Removed the Sign Up button from here */}
         </div>
     );
