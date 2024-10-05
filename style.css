@@ -141,3 +141,29 @@ nav ul li a:hover {
 .home-container .button:hover {
     background-color: #0056b3;
 }
+
+/* Profile Container */
+.profile-container {
+    max-width: 600px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-info {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.profile-info strong {
+    color: #007BFF;
+}
