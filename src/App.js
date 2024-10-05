@@ -1,25 +1,26 @@
+// src/App.js
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './Home'; // Import Home component
-import Profile from './Profile'; // Import Profile component
-import Login from './Login'; // Import Login component
-import SignUp from './SignUp'; // Import SignUp component
-import Messages from './Messages'; // Import Messages component
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Home from './Home';         // Importing Home component
+import Profile from './Profile';   // Importing Profile component
+import Messages from './Messages'; // Importing Messages component
+import Login from './Login';       // Importing Login component
+import SignUp from './SignUp';     // Importing SignUp component
 
-function App() {
+const App = () => {
     return (
         <Router>
             <div>
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/profile" element={<Profile />} />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/signup" element={<SignUp />} />
-                    <Route path="/messages" element={<Messages />} />
-                </Routes>
+                <Switch>
+                    <Route path="/" exact component={Home} />
+                    <Route path="/profile" component={Profile} />
+                    <Route path="/messages" component={Messages} />
+                    <Route path="/login" component={Login} />
+                    <Route path="/signup" component={SignUp} />
+                </Switch>
             </div>
         </Router>
     );
-}
+};
 
 export default App;
