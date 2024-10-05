@@ -1,44 +1,56 @@
-import React, { useState } from 'react';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="profile-container">
+        <h1>Your Profile</h1>
+        <div id="profile-picture-preview" class="profile-picture-preview"></div>
+        <input 
+            type="file" 
+            accept="image/*" 
+            id="picture-input" 
+            onchange="handlePictureChange(event)" 
+        />
+        <h2>Privacy Settings</h2>
+        <label>
+            <input 
+                type="radio" 
+                name="privacy" 
+                value="public" 
+                checked 
+                onchange="handlePrivacyChange(event)" 
+            /> Public
+        </label>
+        <label>
+            <input 
+                type="radio" 
+                name="privacy" 
+                value="private" 
+                onchange="handlePrivacyChange(event)" 
+            /> Private
+        </label>
+    </div>
 
-const Profile = () => {
-    const [profilePicture, setProfilePicture] = useState(null);
-    const [privacy, setPrivacy] = useState('public'); // Default privacy setting
+    <script>
+        let profilePicture = null;
+        let privacy = 'public'; // Default privacy setting
 
-    const handlePictureChange = (event) => {
-        const file = event.target.files[0];
-        if (file) {
-            setProfilePicture(URL.createObjectURL(file)); // Preview the image
+        function handlePictureChange(event) {
+            const file = event.target.files[0];
+            if (file) {
+                profilePicture = URL.createObjectURL(file); // Preview the image
+                document.getElementById('profile-picture-preview').innerHTML = `<img src="${profilePicture}" alt="Profile" style="width: 100%; border-radius: 5px;" />`;
+            }
         }
-    };
 
-    const handlePrivacyChange = (event) => {
-        setPrivacy(event.target.value);
-    };
-
-    return (
-        <div className="profile-container">
-            <h1>Your Profile</h1>
-            {profilePicture && <img src={profilePicture} alt="Profile" style={{ width: '100%', borderRadius: '5px' }} />}
-            <input type="file" accept="image/*" onChange={handlePictureChange} />
-            <h2>Privacy Settings</h2>
-            <label>
-                <input 
-                    type="radio" 
-                    value="public" 
-                    checked={privacy === 'public'} 
-                    onChange={handlePrivacyChange} 
-                /> Public
-            </label>
-            <label>
-                <input 
-                    type="radio" 
-                    value="private" 
-                    checked={privacy === 'private'} 
-                    onChange={handlePrivacyChange} 
-                /> Private
-            </label>
-        </div>
-    );
-};
-
-export default Profile;
+        function handlePrivacyChange(event) {
+            privacy = event.target.value; // Update privacy setting
+        }
+    </script>
+</body>
+</html>
