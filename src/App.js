@@ -1,26 +1,17 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import Home from './Home';
 import Profile from './Profile';
-import Messages from './Messages';
-import Login from './Login';
-import { useAuth } from './AuthContext';
+import Notifications from './Notifications';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const App = () => {
-    const { user } = useAuth();
-
     return (
         <Router>
             <Switch>
-                <Route path="/" exact component={Home} />
-                <Route path="/login" component={Login} />
-                <Route path="/profile">
-                    {user ? <Profile /> : <Redirect to="/login" />}
-                </Route>
-                <Route path="/messages">
-                    {user ? <Messages /> : <Redirect to="/login" />}
-                </Route>
-                <Redirect to="/" />
+                <Route path="/home" component={Home} />
+                <Route path="/profile" component={Profile} />
+                <Route path="/notifications" component={Notifications} />
+                <Route path="/" component={Home} />
             </Switch>
         </Router>
     );
