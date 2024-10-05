@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages - Dating Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="messages.html">Messages</a></li>
+            <li><a href="login.html">Log In</a></li>
+        </ul>
+    </nav>
+
+    <!-- Messages Container -->
+    <div class="messages-container">
+        <h1>Your Messages</h1>
+        <div class="message">
+            <p><strong>Jane Doe:</strong> Hi there! How are you?</p>
+        </div>
+        <div class="message">
+            <p><strong>John Smith:</strong> Looking forward to our hike this weekend!</p>
+        </div>
+        <div class="message">
+            <p><strong>Mary Jane:</strong> Are you free for coffee tomorrow?</p>
+        </div>
+
+        <h2>Send a Message</h2>
+        <form action="#" method="POST">
+            <label for="recipient">To:</label>
+            <input type="text" id="recipient" name="recipient" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit" class="button">Send</button>
+        </form>
+    </div>
+
+    <div class="watermark">
+        <a href="#">by Phil</a>
+    </div>
+
+</body>
+</html>
